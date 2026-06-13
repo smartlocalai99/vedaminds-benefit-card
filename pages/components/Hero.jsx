@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
   id="home"
-  className="bg-white pt-32 pb-32"
+  className="bg-white pt-20 md:pt-32 pb-16 md:pb-32"
 >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
@@ -136,10 +136,16 @@ export default function Hero() {
             {/* Membership Card */}
             <div
   className="
-    relative z-10 rotate-[-7deg]
-    bg-gradient-to-br from-[#072A20] to-[#0E3B2E]
-    text-white rounded-[40px]
-    p-8 w-[560px] shadow-2xl
+    relative z-10
+rotate-[-4deg] md:rotate-[-7deg]
+bg-gradient-to-br from-[#072A20] to-[#0E3B2E]
+text-white
+rounded-[28px] md:rounded-[40px]
+p-4 md:p-8
+w-full max-w-[290px] md:max-w-[560px]
+shadow-2xl
+mx-auto
+overflow-hidden
     transition-all duration-500
     hover:rotate-[-4deg]
     hover:scale-105
@@ -150,7 +156,7 @@ export default function Hero() {
 
               <div className="flex justify-between items-start">
                 <div>
-                  <h2 className="text-3xl font-bold">
+                  <h2 className="text-xl md:text-3xl font-bold">
                     VEDA
                   </h2>
                   <p className="text-sm text-gray-300">
@@ -161,21 +167,21 @@ export default function Hero() {
                 <div className="w-14 h-10 bg-[#D4AF37] rounded-md"></div>
               </div>
 
-              <div className="mt-10">
-                <h3 className="text-3xl font-semibold">
+              <div className="mt-6 md:mt-10">
+                <h3 className="text-xl md:text-3xl font-semibold">
                   John Doe
                 </h3>
 
-                <p className="text-gray-400 mt-6 text-sm">
+                <p className="text-gray-400 mt-3 md:mt-6 text-sm">
                   Member ID
                 </p>
 
-                <p className="text-2xl font-bold">
+                <p className="text-lg md:text-2xl font-bold break-words">
                   VEDA-4587-PL
                 </p>
               </div>
 
-              <div className="flex justify-between mt-10">
+              <div className="flex justify-between mt-6 md:mt-10">
                 <div>
                   <p className="text-sm text-gray-400">
                     Valid From
@@ -192,31 +198,47 @@ export default function Hero() {
               </div>
 
               {/* QR */}
-              <div className="absolute bottom-8 right-8 bg-white p-2 rounded-xl">
-                <img
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=VEDA"
-                  alt="QR"
-                  className="w-28 h-28"
-                />
+              <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 bg-white p-2 rounded-xl">
+                <img src="https://quickchart.io/qr?text=VEDA&size=120" 
+                         alt="QR"
+                         className="w-20 h-20 md:w-28 md:h-28 object-contain"/>
               </div>
             </div>
 
             {/* Verification Card */}
-            <div className="absolute -bottom-14 left-6 bg-white rounded-[24px] shadow-2xl px-5 py-3 flex items-center gap-4 z-20 backdrop-blur-sm">
-              <div className="w-10 h-10 bg-[#7ED957] rounded-full flex items-center justify-center text-white text-xl shadow-sm">
-                ✔
-              </div>
+            {/* Verification Card */}
+<div
+  className="
+    absolute
+    -bottom-8 md:-bottom-14
+    left-1/2 md:left-6
+    -translate-x-1/2 md:translate-x-0
+    bg-white
+    rounded-[18px] md:rounded-[24px]
+    shadow-2xl
+    px-3 md:px-5
+    py-2 md:py-3
+    flex items-center gap-2 md:gap-4
+    z-20
+    backdrop-blur-sm
+    w-[220px] md:w-auto
+  "
+>
+  <div className="w-8 h-8 md:w-10 md:h-10 bg-[#7ED957] rounded-full flex items-center justify-center text-white text-sm md:text-xl shadow-sm">
+    ✔
+  </div>
 
-              <div>
-                <h4 className="font-semibold text-[#0E1B16]">
-                  Membership Verified
-                </h4>
+  <div>
+    <h4 className="font-semibold text-[#0E1B16] text-sm md:text-base">
+      Membership Verified
+    </h4>
 
-                <p className="text-sm text-gray-500">
-                  Active • Valid
-                </p>
-              </div>
-            </div>
+    <p className="text-xs md:text-sm text-gray-500">
+      Active • Valid
+    </p>
+  </div>
+</div>
+   
           </div>
 
         </div>

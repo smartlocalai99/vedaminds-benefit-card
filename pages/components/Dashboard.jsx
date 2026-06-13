@@ -107,11 +107,7 @@ export default function Dashboard() {
             </div>
 
             {/* Button */}
-            <button className="mt-10 flex items-center gap-3 bg-[#0E3B2E] text-white px-8 py-4 rounded-full font-medium hover:scale-105
-hover:-translate-y-1
-hover:shadow-xl
-active:scale-95
-transition-all duration-300">
+            <button className="mt-10 flex items-center gap-3 bg-[#0E3B2E] text-white px-8 py-4 rounded-full font-medium">
               Explore Dashboard
               <ArrowRight size={18} />
             </button>
@@ -119,13 +115,7 @@ transition-all duration-300">
 
           {/* Right Dashboard UI */}
           <div
-  className="
-    bg-white rounded-[30px]
-    border border-[#EFE8DD]
-    shadow-xl p-6
-    animate-dashboard-float
-    hover:scale-[1.02]
-    transition-all duration-500
+  className="bg-white rounded-[30px] border border-[#EFE8DD] shadow-xl p-6
   "
 >
 
@@ -157,11 +147,6 @@ transition-all duration-300">
   bg-[#FAFAFA]
   rounded-2xl p-5
   border border-[#F0F0F0]
-  transition-all duration-500
-  hover:-translate-y-2
-  hover:shadow-xl
-  hover:border-[#D8B15C]/40
-  cursor-pointer
 "
                 >
                   <p className="text-sm text-gray-500">
@@ -198,11 +183,9 @@ transition-all duration-300">
     bg-[#D9EBD9]
     rounded-t-xl
     relative
-    animate-bar-grow
   "
   style={{
     height: `${bar}px`,
-    animationDelay: `${index * 0.15}s`,
   }}
 >
                         <div className="absolute bottom-0 w-full bg-[#0E3B2E] rounded-t-xl h-[50%]"></div>
@@ -226,10 +209,6 @@ transition-all duration-300">
   flex justify-between items-center
   border-b border-gray-100
   pb-3 px-2 py-2 rounded-xl
-  transition-all duration-300
-  hover:bg-[#F7F9F8]
-  hover:translate-x-2
-  cursor-pointer
 "
                     >
                       <div>

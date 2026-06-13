@@ -8,39 +8,9 @@
 html {
   scroll-behavior: smooth;
 }
-
-@keyframes floatStep {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.step-float {
-  animation: floatStep 4s ease-in-out infinite;
-}
-
-
-/* Moving Arrow */
-@keyframes flow {
-  0% {
-    left: -10%;
-  }
-
-  100% {
-    left: 100%;
-  }
-}
-
-.animate-flow {
-  animation: flow 6s linear infinite;
+html,
+body {
+  overflow-x: hidden;
 }
 
 
@@ -64,54 +34,3 @@ html {
   animation: floatStep 4s ease-in-out infinite;
 }
 
-/* Active Process Effect */
-@keyframes processGlow {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 rgba(196,154,74,0);
-  }
-
-  50% {
-    transform: scale(1.15);
-    box-shadow: 0 0 30px rgba(196,154,74,0.4);
-    background: #fff6e5;
-  }
-}
-
-.process-circle {
-  animation: processGlow 6s infinite;
-}
-
-
-@keyframes dashboardFloat {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.animate-dashboard-float {
-  animation: dashboardFloat 5s ease-in-out infinite;
-}
-
-@keyframes barGrow {
-  from {
-    height: 0;
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.animate-bar-grow {
-  animation: barGrow 1s ease forwards;
-}

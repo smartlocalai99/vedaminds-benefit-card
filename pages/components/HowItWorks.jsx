@@ -93,7 +93,7 @@ export default function HowItWorks() {
     <div className="relative w-full h-[2px] bg-[#E8D9BA]">
 
       {/* Moving Arrow */}
-      <div className="absolute top-1/2 -translate-y-1/2 animate-flow z-10">
+      <div className="absolute top-1/2 -translate-y-1/2 z-10">
         <div className="flex items-center">
           <div className="w-16 h-[2px] bg-[#C49A4A]"></div>
 
@@ -110,12 +110,10 @@ export default function HowItWorks() {
       <div
         key={step.id}
         className="
-          flex flex-col items-center text-center relative
-          transition-all duration-500
-          hover:-translate-y-4
-          group
-          step-float
-        "
+  flex flex-col items-center text-center relative
+  transition-all duration-300
+  group
+"
         style={{
           animationDelay: `${index * 0.5}s`,
         }}
@@ -136,15 +134,14 @@ export default function HowItWorks() {
         {/* Icon Circle */}
         <div
           className="
-            process-circle
-            relative z-20
-            w-28 h-28 rounded-full
-            bg-gradient-to-br from-[#FFF9F0] to-[#F7F2E8]
-            border border-[#E8DDCC]
-            flex items-center justify-center
-            shadow-md
-            text-[#B3873A]
-          "
+  relative z-20
+  w-28 h-28 rounded-full
+  bg-gradient-to-br from-[#FFF9F0] to-[#F7F2E8]
+  border border-[#E8DDCC]
+  flex items-center justify-center
+  shadow-md
+  text-[#B3873A]
+"
           style={{
             animationDelay: `${index * 0.5}s`,
           }}

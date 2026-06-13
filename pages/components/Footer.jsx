@@ -23,88 +23,75 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
-          {/* Quick Links */}
-<div>
-  <h3 className="text-xl font-semibold mb-5">
-    Quick Links
-  </h3>
+          
+{/* Quick Links + Services */}
+<div className="col-span-2 lg:col-span-2 grid grid-cols-2 gap-8">
 
-  <ul className="space-y-3 text-gray-400">
+  {/* Quick Links */}
+  <div>
+    <h3 className="text-xl font-semibold mb-5">
+      Quick Links
+    </h3>
 
-    <li>
-      <a
-        href="#home"
-        className="hover:text-white transition duration-300"
-      >
-        Home
-      </a>
-    </li>
+    <ul className="space-y-3 text-gray-400">
+      <li>
+        <a href="#home" className="hover:text-white transition duration-300">
+          Home
+        </a>
+      </li>
 
-    <li>
-      <a
-        href="#features"
-        className="hover:text-white transition duration-300"
-      >
-        Features
-      </a>
-    </li>
+      <li>
+        <a href="#features" className="hover:text-white transition duration-300">
+          Features
+        </a>
+      </li>
 
-    <li>
-      <a
-        href="#services"
-        className="hover:text-white transition duration-300"
-      >
-        How It Works
-      </a>
-    </li>
+      <li>
+        <a href="#services" className="hover:text-white transition duration-300">
+          How It Works
+        </a>
+      </li>
 
-    <li>
-      <a
-        href="#testimonials"
-        className="hover:text-white transition duration-300"
-      >
-        Reviews
-      </a>
-    </li>
+      <li>
+        <a href="#testimonials" className="hover:text-white transition duration-300">
+          Reviews
+        </a>
+      </li>
 
-    <li>
-      <a
-        href="#faq"
-        className="hover:text-white transition duration-300"
-      >
-        Support
-      </a>
-    </li>
+      <li>
+        <a href="#faq" className="hover:text-white transition duration-300">
+          Support
+        </a>
+      </li>
 
-    <li>
-      <a
-        href="#contact"
-        className="hover:text-white transition duration-300"
-      >
-        Contact
-      </a>
-    </li>
+      <li>
+        <a href="#contact" className="hover:text-white transition duration-300">
+          Contact
+        </a>
+      </li>
+    </ul>
+  </div>
 
-  </ul>
+  {/* Services */}
+  <div>
+    <h3 className="text-xl font-semibold mb-5">
+      Services
+    </h3>
+
+    <ul className="space-y-3 text-gray-400">
+      <li>Membership Validation</li>
+      <li>Vendor Tracking</li>
+      <li>Discount Management</li>
+      <li>Secure Transactions</li>
+    </ul>
+  </div>
+
 </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-xl font-semibold mb-5">
-              Services
-            </h3>
-
-            <ul className="space-y-3 text-gray-400">
-              <li>Membership Validation</li>
-              <li>Vendor Tracking</li>
-              <li>Discount Management</li>
-              <li>Secure Transactions</li>
-            </ul>
-          </div>
+          
 
           {/* Contact */}
-          <div>
+          <div className="text-center lg:text-left">
             <h3 className="text-xl font-semibold mb-5">
               Contact
             </h3>

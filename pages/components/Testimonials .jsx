@@ -1,8 +1,6 @@
-
 "use client";
 
 import { Star } from "lucide-react";
-import { motion } from "framer-motion";
 
 export default function Testimonials() {
   const testimonials = [
@@ -33,7 +31,10 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="bg-white py-24 overflow-hidden">
+    <section
+      id="testimonials"
+      className="bg-white py-24 overflow-hidden"
+    >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
         {/* Heading */}
@@ -59,33 +60,13 @@ export default function Testimonials() {
         <div className="grid lg:grid-cols-3 gap-8">
 
           {testimonials.map((item, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{
-                opacity: 0,
-                y: 50,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.15,
-              }}
-              whileHover={{
-                y: -10,
-              }}
               className="
                 relative bg-white
                 rounded-[32px]
                 border border-[#EFE8DD]
                 p-8 shadow-sm
-                hover:shadow-2xl
-                hover:bg-white
-                hover:-translate-y-2
-                transition-all duration-500
               "
             >
               {/* Glow */}
@@ -125,7 +106,7 @@ export default function Testimonials() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
 
         </div>
@@ -133,4 +114,3 @@ export default function Testimonials() {
     </section>
   );
 }
-

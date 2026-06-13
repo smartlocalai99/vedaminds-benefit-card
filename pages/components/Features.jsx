@@ -44,7 +44,7 @@ export default function Features() {
   return (
     <section
   id="features"
-  className="bg-white pb-20"
+  className="bg-white pb-20 scroll-mt-32"
 >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
