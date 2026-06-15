@@ -7,50 +7,50 @@ import {
 
 export default function Dashboard() {
   const stats = [
-    {
-      title: "Total Members",
-      value: "12,458",
-      growth: "+12.5%",
-    },
-    {
-      title: "Total Transactions",
-      value: "24,578",
-      growth: "+15.3%",
-    },
-    {
-      title: "Total Discounts",
-      value: "₹3,45,678",
-      growth: "+10.1%",
-    },
-    {
-      title: "Total Sales",
-      value: "₹48,75,890",
-      growth: "+14.2%",
-    },
-  ];
+  {
+    title: "Registered Vendors",
+    value: "2,500+",
+    growth: "+12.5%",
+  },
+  {
+    title: "Cards Scanned Today",
+    value: "18,240",
+    growth: "+15.3%",
+  },
+  {
+    title: "Discounts Applied",
+    value: "8,764",
+    growth: "+10.1%",
+  },
+  {
+    title: "Revenue Processed",
+    value: "₹48,75,890",
+    growth: "+14.2%",
+  },
+];
 
   const transactions = [
-    {
-      id: "#TRX-1258",
-      vendor: "Coffee House Pvt. Ltd.",
-      amount: "₹1,250",
-    },
-    {
-      id: "#TRX-1257",
-      vendor: "Green Valley Traders",
-      amount: "₹2,450",
-    },
-    {
-      id: "#TRX-1256",
-      vendor: "Sharma Suppliers",
-      amount: "₹1,900",
-    },
-    {
-      id: "#TRX-1255",
-      vendor: "Elegant Exports",
-      amount: "₹3,675",
-    },
-  ];
+  {
+    id: "#SCAN-1258",
+    vendor: "Hyderabad Mart",
+    amount: "Card Verified",
+  },
+  {
+    id: "#DISC-1257",
+    vendor: "Green Valley Store",
+    amount: "15% Discount",
+  },
+  {
+    id: "#PAY-1256",
+    vendor: "Sharma Retail",
+    amount: "₹1,900",
+  },
+  {
+    id: "#SCAN-1255",
+    vendor: "Elegant Traders",
+    amount: "Membership Active",
+  },
+];
 
   return (
     <section
@@ -69,15 +69,14 @@ export default function Dashboard() {
             </p>
 
             <h2 className="text-[42px] md:text-[56px] leading-tight font-serif text-[#0E1B16] mt-4">
-              Track. Analyze.
+              Manage Vendors.
               <br />
-              Make Better Decisions.
+              Track Performance.
             </h2>
 
             <p className="text-[#6B7280] text-lg leading-8 mt-6 max-w-[520px]">
-              Get complete visibility of memberships,
-              transactions, discounts, and vendor
-              activities in one powerful dashboard.
+                A centralized dashboard to onboard vendors,
+                validate memberships, and monitor business activity.
             </p>
 
             {/* Checklist */}
@@ -108,7 +107,7 @@ export default function Dashboard() {
 
             {/* Button */}
             <button className="mt-10 flex items-center gap-3 bg-[#0E3B2E] text-white px-8 py-4 rounded-full font-medium">
-              Explore Dashboard
+              Join Vendor Network
               <ArrowRight size={18} />
             </button>
           </div>
@@ -132,9 +131,25 @@ export default function Dashboard() {
               </div>
 
               <div className="flex items-center gap-4">
-                <Bell size={20} />
-                <UserCircle2 size={30} />
-              </div>
+  <Bell size={20} className="text-[#0E1B16]" />
+
+  <div className="flex items-center gap-3">
+    <img
+      src="/dash.png"
+      alt="Indian Vendor"
+      className="w-11 h-11 rounded-full object-cover border-2 border-[#EADFCF]"
+    />
+
+    <div className="hidden sm:block">
+      <p className="text-sm font-semibold text-[#0E1B16]">
+        Ravi Kumar
+      </p>
+      <p className="text-xs text-gray-500">
+        Vendor Admin
+      </p>
+    </div>
+  </div>
+</div>
             </div>
 
             {/* Stats */}

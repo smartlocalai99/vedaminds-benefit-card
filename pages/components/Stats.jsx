@@ -33,7 +33,7 @@ export default function Stats() {
 
   return (
     <section className="bg-white pb-20 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="w-full px-6 lg:px-12">
 
         <div className="bg-gradient-to-r from-[#06271D] to-[#0B3B2D] rounded-[40px] overflow-hidden shadow-2xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">

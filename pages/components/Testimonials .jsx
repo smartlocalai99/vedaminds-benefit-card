@@ -4,31 +4,31 @@ import { Star } from "lucide-react";
 
 export default function Testimonials() {
   const testimonials = [
-    {
-      name: "Ravi Kumar",
-      role: "Coffee Vendor",
-      image:
-        "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200",
-      review:
-        "VEDA helped us increase repeat customers by 42%. Membership validation became super fast and secure.",
-    },
-    {
-      name: "Priya Sharma",
-      role: "Retail Partner",
-      image:
-        "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200",
-      review:
-        "The dashboard analytics gave us complete visibility into discounts and customer engagement. Highly recommended.",
-    },
-    {
-      name: "Arjun Reddy",
-      role: "Restaurant Owner",
-      image:
-        "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=200",
-      review:
-        "Easy setup, premium experience, and secure transactions. VEDA transformed how we manage memberships.",
-    },
-  ];
+  {
+    name: "Srinivas Reddy",
+    role: "Restaurant Owner",
+    image:
+      "/rev2.png",
+    review:
+      "VEDA helped us increase repeat customers by 42%. Membership validation became fast and secure.",
+  },
+  {
+    name: "Keerthi Devi",
+    role: "Retail Partner",
+    image:
+      "/rev1.png",
+    review:
+      "The dashboard analytics gave us complete visibility into discounts and customer engagement.",
+  },
+  {
+    name: "Mahesh Goud",
+    role: "Coffee Vendor",
+    image:
+      "/rev3.png",
+    review:
+      "Easy setup and secure transactions. VEDA transformed how we manage memberships.",
+  },
+];
 
   return (
     <section

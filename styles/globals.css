@@ -34,3 +34,25 @@ body {
   animation: floatStep 4s ease-in-out infinite;
 }
 
+/* Floating animation */
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.float-delay {
+  animation: floatSlow 6s ease-in-out infinite;
+}

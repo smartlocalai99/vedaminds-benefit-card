@@ -5,49 +5,49 @@ import { ChevronDown } from "lucide-react";
 
 export default function Faq() {
   const faqs = [
-    {
-      question: "What is VEDA?",
-      answer:
-        "VEDA is a smart vendor membership and discount management platform designed to streamline membership validation, vendor tracking, and secure transactions.",
-    },
-    {
-      question: "How does membership validation work?",
-      answer:
-        "VEDA instantly validates membership cards through QR or barcode scanning with real-time verification and status updates.",
-    },
-    {
-      question: "Is my data secure?",
-      answer:
-        "Yes. VEDA uses enterprise-grade encryption and secure systems to ensure complete protection of customer and vendor data.",
-    },
-    {
-      question: "Can I integrate VEDA with my existing system?",
-      answer:
-        "Absolutely. VEDA supports seamless integration with POS systems and existing business tools.",
-    },
-    {
-      question: "How long does setup take?",
-      answer:
-        "Most businesses can get started within a few days depending on vendor onboarding and configuration requirements.",
-    },
-    {
-      question: "Can I track discounts and transactions?",
-      answer:
-        "Yes. VEDA provides real-time analytics to track discounts, purchases, memberships, and vendor performance.",
-    },
-  ];
+  {
+    question: "What is VEDA?",
+    answer:
+      "VEDA is a smart vendor membership platform that helps businesses validate memberships, manage discounts, and track vendor activities securely.",
+  },
+  {
+    question: "How do vendors join VEDA?",
+    answer:
+      "Vendors can join the VEDA network through a quick onboarding process and start validating memberships instantly.",
+  },
+  {
+    question: "How does membership validation work?",
+    answer:
+      "VEDA validates membership cards instantly through QR or barcode scanning with real-time verification.",
+  },
+  {
+    question: "Is vendor and customer data secure?",
+    answer:
+      "Yes. VEDA uses secure systems and encrypted technology to protect all vendor and membership data.",
+  },
+  {
+    question: "How long does vendor onboarding take?",
+    answer:
+      "Most vendors can complete onboarding within a few days depending on setup and verification.",
+  },
+  {
+    question: "Can I track discounts and payments?",
+    answer:
+      "Yes. Vendors can monitor discounts, membership validations, and payment activity in real time.",
+  },
+];
 
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
 
   return (
     <section
       id="faq"
-      className="bg-[#FBF8F3] py-24"
+      className="bg-[#FBF8F3] py-20"
     >
       <div className="max-w-[1100px] mx-auto px-6 lg:px-12">
 
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <p className="text-[#B3873A] uppercase tracking-[3px] text-sm font-semibold">
             SUPPORT
           </p>
@@ -59,14 +59,12 @@ export default function Faq() {
           </h2>
 
           <p className="text-[#6B7280] text-lg mt-5 max-w-[600px] mx-auto leading-8">
-            Everything you need to know about
-            VEDA membership tracking and vendor
-            management.
+            Find answers about vendor onboarding, membership validation, discounts, and secure transactions with VEDA.
           </p>
         </div>
 
         {/* FAQ List */}
-        <div className="space-y-5">
+        <div className="grid md:grid-cols-2 gap-6 items-start">
 
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -75,11 +73,12 @@ export default function Faq() {
               <div
                 key={index}
                 className="
-                  bg-white rounded-[28px]
-                  border border-[#EFE8DD]
-                  overflow-hidden
-                  transition-all duration-300
-                "
+  bg-white rounded-[28px]
+  border border-[#EFE8DD]
+  overflow-hidden
+  transition-all duration-300
+  h-fit
+"
               >
                 {/* Question */}
                 <button
@@ -91,7 +90,7 @@ export default function Faq() {
                   className="
                     w-full flex items-center
                     justify-between
-                    px-8 py-7 text-left
+                    px-7 py-5 text-left
                   "
                 >
                   <h3 className="text-lg md:text-xl font-semibold text-[#0E1B16]">

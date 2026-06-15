@@ -1,166 +1,108 @@
-import {
-  UserPlus,
-  CreditCard,
-  Store,
-  ScanLine,
-  ShieldCheck,
-  BadgePercent,
-  WalletCards,
-  FileText,
-} from "lucide-react";
-
 export default function HowItWorks() {
   const steps = [
-    {
-      id: "1",
-      icon: <UserPlus size={28} />,
-      title: "Admin Creates",
-      subtitle: "Membership",
-    },
-    {
-      id: "2",
-      icon: <CreditCard size={28} />,
-      title: "Customer Receives",
-      subtitle: "Card",
-    },
-    {
-      id: "3",
-      icon: <Store size={28} />,
-      title: "Customer Visits",
-      subtitle: "Vendor",
-    },
-    {
-      id: "4",
-      icon: <ScanLine size={28} />,
-      title: "Vendor Scans",
-      subtitle: "Barcode",
-    },
-    {
-      id: "5",
-      icon: <ShieldCheck size={28} />,
-      title: "System",
-      subtitle: "Validates",
-    },
-    {
-      id: "6",
-      icon: <BadgePercent size={28} />,
-      title: "Discount",
-      subtitle: "Applied",
-    },
-    {
-      id: "7",
-      icon: <WalletCards size={28} />,
-      title: "Payment",
-      subtitle: "Processed",
-    },
-    {
-      id: "8",
-      icon: <FileText size={28} />,
-      title: "Transaction",
-      subtitle: "Saved",
-    },
-  ];
+  {
+    number: "01",
+    title: "Customer Buys",
+    description:
+      "Customers purchase products from partnered stores using membership benefits.",
+    image:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80",
+    reverse: false,
+  },
+  {
+    number: "02",
+    title: "ShopKeeper Scans Card",
+    description:
+      "The shopkeeper scans the membership card to validate customer eligibility instantly.",
+    image:
+      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=80",
+    reverse: true,
+  },
+  {
+    number: "03",
+    title: "Discount Applied",
+    description:
+      "Eligible discounts are automatically applied after successful validation.",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80",
+    reverse: false,
+  },
+  {
+    number: "04",
+    title: "Payment Processed",
+    description:
+      "Payment is securely completed and the transaction is recorded successfully.",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80",
+    reverse: true,
+  },
+];
 
   return (
     <section
-  id="services"
-  className="bg-white py-20"
->
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      id="services"
+      className="bg-[#f8f8f8] py-24 px-6 md:px-16"
+    >
+      <div className="max-w-7xl mx-auto">
 
-        {/* Top Heading */}
-        <div className="text-center mb-16">
-
-          <p className="text-[#B3873A] uppercase tracking-[3px] text-sm font-semibold">
+        {/* Heading */}
+        <div className="text-center mb-20">
+          <p className="text-[#B3873A] uppercase tracking-[4px] text-sm font-semibold">
             HOW IT WORKS
           </p>
 
-          <h2 className="text-[38px] md:text-[52px] font-serif text-[#0E1B16] mt-4">
+          <h2 className="text-[40px] md:text-[58px] font-serif text-[#111827] mt-4">
             A simple journey.
-            <span className="relative inline-block ml-3">
-              Every time.
-            </span>
           </h2>
         </div>
 
-        {/* Timeline */}
-        {/* Timeline */}
-{/* Timeline */}
-<div className="relative">
-
-  {/* Background Line Behind Circles */}
-  <div className="hidden lg:block absolute top-14 left-0 w-full z-0">
-    <div className="relative w-full h-[2px] bg-[#E8D9BA]">
-
-      {/* Moving Arrow */}
-      <div className="absolute top-1/2 -translate-y-1/2 z-10">
-        <div className="flex items-center">
-          <div className="w-16 h-[2px] bg-[#C49A4A]"></div>
-
-          <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[8px] border-l-[#C49A4A]"></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  {/* Steps */}
-  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 relative z-20">
-    {steps.map((step, index) => (
-      <div
-        key={step.id}
-        className="
-  flex flex-col items-center text-center relative
-  transition-all duration-300
-  group
-"
-        style={{
-          animationDelay: `${index * 0.5}s`,
-        }}
-      >
-        {/* Step Number */}
-        <div className="
-          absolute -top-3 z-30
-          bg-[#0E3B2E]
-          text-white
-          w-8 h-8 rounded-full
-          flex items-center justify-center
-          text-xs font-semibold
-          shadow-lg
-        ">
-          {step.id}
-        </div>
-
-        {/* Icon Circle */}
-        <div
-          className="
-  relative z-20
-  w-28 h-28 rounded-full
-  bg-gradient-to-br from-[#FFF9F0] to-[#F7F2E8]
-  border border-[#E8DDCC]
-  flex items-center justify-center
-  shadow-md
-  text-[#B3873A]
-"
-          style={{
-            animationDelay: `${index * 0.5}s`,
-          }}
-        >
-          {step.icon}
-        </div>
-
-        <h3 className="text-[16px] font-semibold text-[#0E1B16] mt-5 leading-6">
-          {step.title}
-        </h3>
-
-        <p className="text-[15px] text-[#4B5563]">
-          {step.subtitle}
-        </p>
-      </div>
-    ))}
-  </div>
+        {steps.map((step, index) => (
+          <div key={index}>
+            <div
+              className={`flex flex-row items-center justify-between py-10 md:py-16 gap-4 md:gap-10 ${
+  step.reverse ? "flex-row-reverse" : ""
+}`}
+            >
+              {/* Number */}
+<div className="flex justify-center shrink-0 overflow-visible w-[100px] sm:w-auto">
+  <h1
+    className="text-[80px] sm:text-[120px] md:text-[220px] font-extrabold leading-none"
+    style={{
+      backgroundImage: `url(${step.image})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      WebkitBackgroundClip: "text",
+      backgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      color: "transparent",
+      display: "inline-block",
+    }}
+  >
+    {step.number}
+  </h1>
 </div>
 
+              {/* Content */}
+              {/* Content */}
+<div className="flex-1 text-left">
+  <h2 className="text-[20px] sm:text-[28px] md:text-5xl font-semibold text-black mb-3 md:mb-5">
+    {step.title}
+  </h2>
+
+  <div className="w-14 md:w-24 h-[2px] bg-[#CBB48A] mb-4 md:mb-6" />
+
+  <p className="text-sm sm:text-base md:text-lg text-gray-500 leading-6 md:leading-10">
+    {step.description}
+  </p>
+</div>
+            </div>
+
+            {index !== steps.length - 1 && (
+              <div className="border-t border-gray-300" />
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -46,7 +46,7 @@ export default function Features() {
   id="features"
   className="bg-white pb-20 scroll-mt-32"
 >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="mx-auto px-6 lg:px-12">
 
         <div className="bg-[#FBF8F3] border border-[#EFE8DD] rounded-[28px] overflow-hidden">
 
@@ -54,20 +54,15 @@ export default function Features() {
 
             {features.map((item, index) => (
               <div
-                key={index}
-                className={`
-                   p-8 flex gap-5
-  transition-all duration-500
-  hover:bg-white
-  hover:-translate-y-3
-  hover:shadow-xl
-  cursor-pointer
-                  ${index !== features.length - 1
-                    ? "border-b lg:border-b-0 lg:border-r border-[#EFE8DD]"
-                    : ""
-                  }
-                `}
-              >
+  key={index}
+  className={`
+    p-8 flex gap-5
+    ${index !== features.length - 1
+      ? "border-b lg:border-b-0 lg:border-r border-[#EFE8DD]"
+      : ""
+    }
+  `}
+>
                 {/* Icon */}
                 <div
                   className={`
