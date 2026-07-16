@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #172033;
+
+  /* Veda Benefits Card palette */
+  --color-primary: #5b3fd6;
+  --color-primary-dark: #3d2a9e;
+  --color-primary-darker: #241a63;
+  --color-primary-light: #efeafc;
+  --color-secondary: #f4b942;
+  --color-secondary-dark: #d99c1f;
+  --color-dark: #172033;
+  --color-bg-light: #f8f7ff;
+  --color-success: #2eaf73;
+  --color-success-light: #e3f7ec;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/*
+  The next/font variables (--font-lora, --font-inter, --font-plex-mono) are
+  only defined on the wrapper div rendered by _app.js (next/font's CSS can't
+  be injected from _document.js), so font-family declarations that use them
+  must live on that wrapper or its descendants, not on :root/body — a var()
+  reference resolves against the element's own inherited scope at the point
+  it's declared, not wherever it's eventually used.
+*/
+.font-app {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-lora), Georgia, serif;
+}
+
+.font-card {
+  font-family: var(--font-plex-mono), "Courier New", monospace;
+}
+
+/* Focus visibility for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Fade-in on scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease-out both;
+}
+
+/* Card mock-up gentle float */
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0px) rotate(var(--card-tilt, -4deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--card-tilt, -4deg));
+  }
+  100% {
+    transform: translateY(0px) rotate(var(--card-tilt, -4deg));
+  }
+}
+
+.card-float {
+  animation: cardFloat 5s ease-in-out infinite;
+}
+
+/* Step marker float (existing timeline animation) */
+@keyframes floatStep {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.step-float {
+  animation: floatStep 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fade-in-up,
+  .card-float,
+  .step-float {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
