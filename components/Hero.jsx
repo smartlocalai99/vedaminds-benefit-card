@@ -45,6 +45,19 @@ export default function Hero() {
   }, []);
 
   const enableScrub = !reducedMotion && isDesktop;
+  // Below `lg` there's no scroll track to scrub against, so the video never
+  // gets an initial seek — and without a `poster` or an explicit play(),
+  // many mobile browsers never decode a frame at all and just show a blank
+  // box. Playing it normally (muted, looped) is both the fix and what was
+  // asked for: a normal video on mobile instead of the desktop scrub effect.
+  const playNormally = !reducedMotion && !isDesktop;
+
+  useEffect(() => {
+    if (!playNormally) return;
+    const video = videoRef.current;
+    if (!video) return;
+    video.play().catch(() => {});
+  }, [playNormally]);
 
   useEffect(() => {
     if (!enableScrub) return;
@@ -161,6 +174,7 @@ export default function Hero() {
                 ref={videoRef}
                 src="/finalcard.mp4"
                 muted
+                loop={playNormally}
                 playsInline
                 preload="auto"
                 disablePictureInPicture
