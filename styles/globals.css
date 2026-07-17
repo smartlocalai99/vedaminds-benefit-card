@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #172033;
+  --background: #faf9f6;
+  --foreground: #14181f;
 
   /* Veda Benefits Card palette */
   --color-primary: #5b3fd6;
@@ -15,19 +15,28 @@
   --color-bg-light: #f8f7ff;
   --color-success: #2eaf73;
   --color-success-light: #e3f7ec;
+
+  /* Bento tile surfaces (rotated across benefit/step grids) */
+  --tile-violet: #efeafc;
+  --tile-gold: #fdecc4;
+  --tile-green: #dcf3e6;
+  --tile-white: #ffffff;
 }
 
 html {
   scroll-behavior: smooth;
 }
-html,
-body {
-  overflow-x: hidden;
-}
 
 body {
   background: var(--background);
   color: var(--foreground);
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+video {
+  max-width: 100%;
 }
 
 /*
@@ -37,13 +46,23 @@ body {
   must live on that wrapper or its descendants, not on :root/body — a var()
   reference resolves against the element's own inherited scope at the point
   it's declared, not wherever it's eventually used.
+
+  overflow-x is "clip", not "hidden", and lives here rather than on html/body:
+  "hidden" (on any ancestor, including this wrapper) forces overflow-y to
+  compute as "auto" per the CSS overflow spec, turning that element into a
+  scroll container and breaking every position:sticky descendant (e.g. the
+  scroll-scrubbed Hero video). "clip" suppresses horizontal overflow without
+  creating a scroll container, so it doesn't have that side effect.
 */
 .font-app {
   font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: clip;
 }
 
 .font-display {
-  font-family: var(--font-lora), Georgia, serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .font-card {
@@ -114,6 +133,42 @@ textarea:focus-visible,
   animation: floatStep 4s ease-in-out infinite;
 }
 
+/* Seamless partner-category logo marquee */
+@keyframes logoMarquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.logo-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+}
+
+.logo-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: logoMarquee 24s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -133,5 +188,8 @@ textarea:focus-visible,
     animation-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
 
+  .logo-marquee-track {
+    animation: logoMarquee 24s linear infinite !important;
+  }
+}

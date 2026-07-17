@@ -49,13 +49,13 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faqs" className="bg-white py-16 md:py-24 scroll-mt-20">
+    <section id="faqs" className="bg-[#FAF9F6] py-16 md:py-24 scroll-mt-20">
       <Container maxWidth="880px">
-        <div className="text-center max-w-[620px] mx-auto">
-          <p className="uppercase tracking-[3px] text-[13px] font-semibold text-[#5B3FD6]">
+        <div className="text-center">
+          <p className="inline-block text-[13px] font-semibold text-[#5B3FD6] bg-[#EFEAFC] px-4 py-1.5 rounded-full">
             FAQs
           </p>
-          <h2 className="font-display text-[30px] md:text-[42px] font-semibold text-[#172033] mt-3 leading-tight">
+          <h2 className="font-display text-[30px] md:text-[42px] text-[#14181F] mt-5 leading-tight">
             Frequently Asked Questions
           </h2>
           <p className="text-[#5B6479] text-[16px] leading-8 mt-4">
@@ -64,7 +64,7 @@ export default function Faq() {
           </p>
         </div>
 
-        <div className="mt-12 space-y-4">
+        <div className="mt-10 space-y-3 sm:mt-12 sm:space-y-4">
           {FAQS.map((faq, index) => (
             <FaqAccordion
               key={faq.question}

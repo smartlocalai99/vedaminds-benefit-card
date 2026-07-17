@@ -5,16 +5,16 @@ export default function FaqAccordion({ question, answer, isOpen, onToggle, id })
   const panelId = `faq-panel-${id}`;
 
   return (
-    <div className="bg-white rounded-[24px] border border-[#EAE5F9] overflow-hidden transition-all duration-300">
+    <div className="overflow-hidden rounded-[20px] border border-[#EAE5F9] bg-white transition-all duration-300 sm:rounded-[24px]">
       <h3>
         <button
           id={buttonId}
           onClick={onToggle}
           aria-expanded={isOpen}
           aria-controls={panelId}
-          className="w-full flex items-center justify-between gap-4 px-6 md:px-8 py-6 text-left"
+          className="flex min-h-14 w-full items-center justify-between gap-3 px-5 py-5 text-left sm:gap-4 sm:px-6 sm:py-6 md:px-8"
         >
-          <span className="text-[16px] md:text-[18px] font-semibold text-[#172033]">
+          <span className="text-[15px] font-semibold leading-6 text-[#172033] sm:text-[16px] md:text-[18px]">
             {question}
           </span>
 
@@ -37,7 +37,7 @@ export default function FaqAccordion({ question, answer, isOpen, onToggle, id })
         }`}
       >
         <div className="overflow-hidden">
-          <p className="px-6 md:px-8 pb-6 text-[#5B6479] text-[15px] leading-7">
+          <p className="px-5 pb-5 text-[14.5px] leading-7 text-[#5B6479] sm:px-6 sm:pb-6 sm:text-[15px] md:px-8">
             {answer}
           </p>
         </div>

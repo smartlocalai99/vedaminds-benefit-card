@@ -1,70 +1,73 @@
-import {
-  UserPlus,
-  CreditCard,
-  Store,
-  ScanLine,
-  BadgePercent,
-  GraduationCap,
-  Heart,
-  Users,
-} from "lucide-react";
-import Container from "./Container";
-import ProcessStep from "./ProcessStep";
-import IllustrationCollage from "./IllustrationCollage";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Check } from "lucide-react";
 
-const FLOW = [
-  { icon: <UserPlus size={30} />, title: "Join Veda Minds" },
-  { icon: <CreditCard size={30} />, title: "Receive Your Benefits Card" },
-  { icon: <Store size={30} />, title: "Visit Partner Vendors" },
-  { icon: <ScanLine size={30} />, title: "Show or Scan the Card" },
-  { icon: <BadgePercent size={30} />, title: "Receive Discounts and Member Benefits" },
+const HIGHLIGHTS = [
+  "Member-only savings and special offers",
+  "Trusted local businesses and services",
+  "Educational and community opportunities",
 ];
 
 export default function WhatIsSection() {
   return (
-    <section id="about" className="bg-white py-16 md:py-24 scroll-mt-20">
-      <Container>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="text-center lg:text-left order-2 lg:order-1">
-            <h2 className="font-display text-[30px] md:text-[42px] font-semibold text-[#172033] leading-tight">
-              What Is the Veda Benefits Card?
-            </h2>
-            <p className="text-[#5B6479] text-[16px] md:text-[17px] leading-8 mt-5 max-w-[520px] mx-auto lg:mx-0">
-              The Veda Benefits Card is a community membership card created by
-              Veda Minds Learning &amp; Development Center. It helps families
-              access discounts, special offers, trusted services, educational
-              programs, events, and community opportunities through a growing
-              network of local partner businesses.
+    <section id="about" className="scroll-mt-20 bg-white" aria-labelledby="about-card-heading">
+      <div className="grid lg:grid-cols-2">
+        <div className="flex items-center bg-[#171717] px-5 py-14 sm:min-h-[560px] sm:px-10 sm:py-16 md:px-14 md:py-20 lg:min-h-[700px] lg:px-16 lg:py-24 xl:px-24">
+          <div className="max-w-[560px]">
+            <p className="inline-flex rounded-full border border-[#D89A7B]/35 bg-[#D89A7B]/10 px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[1.8px] text-[#E5AA8D]">
+              About the Card
             </p>
-          </div>
 
-          <div className="order-1 lg:order-2">
-            <IllustrationCollage
-              theme="primary"
-              size="lg"
-              centerIcon={<CreditCard size={40} aria-hidden="true" />}
-              satellites={[
-                <Store key="store" size={22} aria-hidden="true" />,
-                <GraduationCap key="grad" size={22} aria-hidden="true" />,
-                <Heart key="heart" size={22} aria-hidden="true" />,
-                <Users key="users" size={22} aria-hidden="true" />,
-              ]}
-            />
+            <h2
+              id="about-card-heading"
+              className="mt-6 font-display text-[32px] leading-[1.08] text-white sm:text-[42px] md:text-[48px]"
+            >
+              What Is the
+              <span className="mt-1 block text-[#DFA080]">
+                Veda Benefits Card?
+              </span>
+            </h2>
+
+            <p className="mt-6 text-[15.5px] leading-7 text-white/68 md:text-[16px] md:leading-8">
+              The Veda Benefits Card is a community membership card created by
+              Veda Minds Learning &amp; Development Center. It connects families
+              with valuable discounts, trusted services, educational programs,
+              events, and opportunities through a growing local partner network.
+            </p>
+
+            <div className="mt-8 space-y-3.5">
+              {HIGHLIGHTS.map((highlight) => (
+                <div key={highlight} className="flex items-center gap-3 text-white/88">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#DFA080] text-[#171717]">
+                    <Check size={14} strokeWidth={2.5} aria-hidden="true" />
+                  </span>
+                  <span className="text-[14px] font-medium md:text-[14.5px]">
+                    {highlight}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <Link
+              href="/#member-benefits"
+              className="mt-9 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-semibold text-[#171717] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#F5E7DF] sm:w-auto"
+            >
+              Explore Member Benefits
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
           </div>
         </div>
 
-        <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-12">
-          {FLOW.map((step, index) => (
-            <ProcessStep
-              key={step.title}
-              number={index + 1}
-              icon={step.icon}
-              title={step.title}
-              isLast={index === FLOW.length - 1}
-            />
-          ))}
+        <div className="relative min-h-[340px] sm:min-h-[560px] lg:min-h-[700px]">
+          <Image
+            src="/cards.webp"
+            alt="Veda Minds Benefits Cards arranged on a light surface"
+            fill
+            sizes="(max-width: 1023px) 100vw, 50vw"
+            className="object-cover"
+          />
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

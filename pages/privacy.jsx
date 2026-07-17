@@ -17,7 +17,7 @@ export default function Privacy() {
 
       <Navbar />
 
-      <main className="bg-white pt-32 pb-20 min-h-[60vh]">
+      <main className="min-h-[60vh] bg-white pt-24 pb-16 md:pt-32 md:pb-20">
         <Container maxWidth="760px">
           <h1 className="font-display text-[32px] md:text-[42px] font-semibold text-[#172033]">
             Privacy Policy

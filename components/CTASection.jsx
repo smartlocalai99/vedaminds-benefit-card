@@ -2,7 +2,6 @@ import Link from "next/link";
 import Container from "./Container";
 
 export default function CTASection({
-  icon,
   heading,
   text,
   primaryLabel,
@@ -12,43 +11,41 @@ export default function CTASection({
   id,
 }) {
   return (
-    <section id={id} className="py-14 md:py-20 scroll-mt-24">
+    <section id={id} className="scroll-mt-24 py-8 sm:py-10 md:py-14">
       <Container>
-        <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#241a63] via-[#3d2a9e] to-[#5b3fd6] px-8 md:px-14 py-14 text-center">
+        <div className="relative grid items-center gap-8 overflow-hidden rounded-[26px] bg-[#14181F] px-5 py-10 sm:rounded-[32px] sm:px-8 sm:py-12 md:px-12 md:py-14 lg:grid-cols-[220px_1fr] lg:gap-10">
           <div
-            className="absolute -right-16 -top-16 w-64 h-64 bg-[#F4B942]/20 blur-[100px] rounded-full"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute -left-16 -bottom-16 w-64 h-64 bg-white/10 blur-[100px] rounded-full"
+            className="absolute -right-10 -top-10 w-56 h-56 bg-[#5B3FD6]/25 blur-[100px] rounded-full"
             aria-hidden="true"
           />
 
-          <div className="relative z-10 flex flex-col items-center max-w-[640px] mx-auto">
-            {icon && (
-              <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-[#F4B942] mb-6">
-                {icon}
-              </div>
-            )}
+          {/* Layered card visual */}
+          <div className="relative hidden lg:block h-[130px]" aria-hidden="true">
+            <div className="absolute top-3 left-6 w-[150px] h-[95px] rounded-[20px] bg-gradient-to-br from-[#3d2a9e] to-[#5b3fd6] rotate-[-8deg] shadow-xl" />
+            <div className="absolute top-0 left-0 w-[150px] h-[95px] rounded-[20px] bg-gradient-to-br from-[#D99C1F] to-[#F4B942] rotate-[6deg] shadow-xl flex items-end p-3">
+              <span className="w-7 h-5 rounded-sm bg-white/30" />
+            </div>
+          </div>
 
-            <h2 className="font-display text-white text-[30px] md:text-[40px] leading-tight font-semibold">
+          <div className="relative z-10 text-center lg:text-left">
+            <h2 className="font-display text-white text-[28px] md:text-[38px] leading-tight">
               {heading}
             </h2>
 
-            <p className="text-[#E4DEF7] mt-4 text-[16px] md:text-[17px] leading-8">
+            <p className="text-[#B7BAC4] mt-3 text-[15px] md:text-[16px] leading-7">
               {text}
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4 lg:justify-start">
               <Link
                 href={primaryHref}
-                className="inline-flex items-center justify-center gap-2 bg-[#F4B942] text-[#172033] px-8 py-3.5 rounded-full font-semibold shadow-md hover:bg-[#F7C766] hover:-translate-y-0.5 active:scale-95 transition-all duration-300"
+                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-[#F4B942] px-6 py-3.5 font-semibold text-[#14181F] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F7C766] active:scale-95 sm:w-auto sm:px-7"
               >
                 {primaryLabel}
               </Link>
               <Link
                 href={secondaryHref}
-                className="inline-flex items-center justify-center gap-2 bg-transparent border border-white/30 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300"
+                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/25 bg-transparent px-6 py-3.5 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10 sm:w-auto sm:px-7"
               >
                 {secondaryLabel}
               </Link>

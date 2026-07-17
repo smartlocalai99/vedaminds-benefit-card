@@ -30,16 +30,16 @@ const LEGAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#172033] text-white pt-16 pb-8">
+    <footer id="contact" className="scroll-mt-20 bg-[#14181F] pt-14 pb-8 text-white sm:pt-16">
       <Container>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid gap-9 sm:grid-cols-2 sm:gap-10 lg:grid-cols-4">
           <div>
             <Image
-              src="/logo-light.png"
+              src="/vedalogoold.jpeg"
               alt="Veda Minds Learning & Development Center logo"
-              width={72}
-              height={48}
-              className="h-12 w-auto object-contain mb-4"
+              width={420}
+              height={420}
+              className="h-20 w-auto max-w-full object-contain md:h-24 mb-5"
             />
             <p className="text-[#AEB4C7] leading-7 text-[14.5px]">
               The Veda Benefits Card is a community membership card by Veda
@@ -104,9 +104,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13.5px] text-[#AEB4C7]">
+        <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-7 text-left text-[13.5px] text-[#AEB4C7] sm:mt-12 sm:flex-row sm:items-center sm:pt-8">
           <p>© 2026 Veda Minds Learning &amp; Development Center. All rights reserved.</p>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+          <div className="flex flex-wrap justify-start gap-x-5 gap-y-2 sm:justify-center sm:gap-x-6">
             {LEGAL_LINKS.map((link) => (
               <Link key={link.label} href={link.href} className="hover:text-white transition-colors duration-200">
                 {link.label}
